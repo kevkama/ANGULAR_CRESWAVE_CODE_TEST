@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Task } from '../../models/task.model';
 import { TaskService } from '../../services/task.service';
 import { MatDialog } from '@angular/material/dialog';
-import { TaskEditComponent } from '../task-edit/task-edit.component';
 import { Router } from '@angular/router';
+import { DataSource } from '@angular/cdk/collections';
+import { MatTableDataSource } from '@angular/material/table';
+import {TaskEditComponent} from '../task-edit/task-edit.component'
 
 @Component({
   selector: 'app-task-table',
@@ -13,12 +15,13 @@ import { Router } from '@angular/router';
 export class TaskTableComponent implements OnInit {
   tasks: Task[] = [];
   displayedColumns: string[] = ['title', 'description', 'status', 'actions'];
+  dataSource: MatTableDataSource<Task>
 
   constructor(
     private taskService: TaskService,
     private dialog: MatDialog,
     private router: Router
-  ) { }
+  ) {this.dataSource=new MatTableDataSource() }
 
   ngOnInit(): void {
     this.fetchTasks();

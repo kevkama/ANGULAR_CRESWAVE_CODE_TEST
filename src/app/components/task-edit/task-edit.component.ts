@@ -10,10 +10,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './task-edit.component.html',
   styleUrls: ['./task-edit.component.css']
 })
-export class TaskDetailsComponent implements OnInit {
+export class TaskEditComponent implements OnInit {
   taskForm: FormGroup;
   task!: Task;
   isEditMode = false;
+isNew: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -43,10 +44,11 @@ export class TaskDetailsComponent implements OnInit {
     if (this.taskForm.valid) {
       const formValue = this.taskForm.value;
       const task: Task = {
-        id: this.isEditMode ? this.task.id : null,
+        id: this.isEditMode ? this.task.id : 0,
         title: formValue.title,
         description: formValue.description,
-        status: formValue.status
+        status: formValue.status,
+        completed: false
       };
 
       if (this.isEditMode) {

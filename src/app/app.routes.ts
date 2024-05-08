@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TaskTableComponent } from './components/task-table/task-table.component';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/tasks', pathMatch: 'full' },
   { path: 'tasks', component: TaskTableComponent },
   { path: 'tasks/:id', component: TaskDetailsComponent }
