@@ -1,35 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { TasksModule } from './tasks/tasks.module';
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { MatTableModule } from '@angular/material/table';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routes';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TasksModule } from './tasks/tasks.module';
 
 @NgModule({
   declarations: [
-    
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule,
-    MatTableModule,
-    AppComponent,
     AppRoutingModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatInputModule,
-    TasksModule,
-    ReactiveFormsModule,
-    
-
+    BrowserAnimationsModule,
+    TasksModule
   ],
-  providers: []
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule{ }
+export class AppModule { }

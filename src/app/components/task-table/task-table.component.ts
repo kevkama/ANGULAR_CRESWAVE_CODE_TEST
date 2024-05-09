@@ -5,7 +5,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import {TaskEditComponent} from '../task-edit/task-edit.component';
-
 @Component({
   selector: 'app-task-table',
   templateUrl: './task-table.component.html',
