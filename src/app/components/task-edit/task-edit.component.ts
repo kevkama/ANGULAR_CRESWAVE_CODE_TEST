@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Task } from '../../models/task.model';
 import { TaskService } from '../../services/task.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -8,7 +7,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-task-edit',
   templateUrl: './task-edit.component.html',
-  styleUrls: ['./task-edit.component.css']
+  styleUrls: ['./task-edit.component.css'],
 })
 export class TaskEditComponent implements OnInit {
   taskForm: FormGroup;

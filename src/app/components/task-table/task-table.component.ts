@@ -3,14 +3,13 @@ import { Task } from '../../models/task.model';
 import { TaskService } from '../../services/task.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { DataSource } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
-import {TaskEditComponent} from '../task-edit/task-edit.component'
+import {TaskEditComponent} from '../task-edit/task-edit.component';
 
 @Component({
   selector: 'app-task-table',
   templateUrl: './task-table.component.html',
-  styleUrls: ['./task-table.component.css']
+  styleUrls: ['./task-table.component.css'],
 })
 export class TaskTableComponent implements OnInit {
   tasks: Task[] = [];
