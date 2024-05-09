@@ -7,21 +7,25 @@ import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { TasksTableComponent } from './tasks-table/tasks-table.component';
+import { TaskEditComponent } from './task-edit/task-edit.component';
+import { TasksRoutingModule } from './task-routing.module';
+import { HttpClient } from '@angular/common/http';
+import { TaskServiceModule } from '../services/task-service.module';
 
 @NgModule({
+
   declarations: [
-    TasksTableComponent,
-    // TaskEditComponent
+
   ],
   imports: [
     CommonModule,
-    // TasksRoutingModule,
+    TasksRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -29,7 +33,11 @@ import { TasksTableComponent } from './tasks-table/tasks-table.component';
     ReactiveFormsModule,
     MatTableModule,
     MatIconModule,
-    
-  ]
+    FormsModule,
+    MatFormField,
+    TasksTableComponent,
+    TaskEditComponent  ],
+
+
 })
 export class TasksModule { }

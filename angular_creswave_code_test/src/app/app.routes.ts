@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
+import { TasksTableComponent } from '../libs/tasks/tasks-table/tasks-table.component';
 
 export const routes: Routes = [
-  // { path: 'calendar', component: MainCalendarPageComponent },
+  { path: '', component: TasksTableComponent },
+  { path: 'tasks', component: TasksTableComponent },
 ];
